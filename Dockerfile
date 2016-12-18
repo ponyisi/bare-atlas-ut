@@ -1,7 +1,7 @@
 ## University of Texas - Austin configuration
 ## Condor and local squid - no autodiscovery
 
-FROM hepsw/cvmfs-atlas
+FROM hepsw/slc-base
 MAINTAINER Peter Onyisi "ponyisi@cern.ch"
 
 # Frontier configuration
@@ -14,7 +14,7 @@ ADD condor_config.local /etc/condor/condor_config.local
 
 # Install OSG WN base
 # Install ganglia
-RUN yum -y install http://linuxsoft.cern.ch/cern/slc64/x86_64/yum/extras/HEP_OSlibs_SL6-1.0.16-0.el6.x86_64.rpm condor yum-plugin-priorities https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm osg-wn-client wget rsync  ganglia-gmond ; yum clean all
+RUN yum -y install http://linuxsoft.cern.ch/cern/slc64/x86_64/yum/extras/HEP_OSlibs_SL6-1.0.16-0.el6.x86_64.rpm condor yum-plugin-priorities https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm osg-wn-client wget rsync  ganglia-gmond fuse ; yum clean all
 ADD etc-ganglia-gmond.conf /etc/ganglia/gmond.conf
 
 #ADD etc-cvmfs-default-local /etc/cvmfs/default.local

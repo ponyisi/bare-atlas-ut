@@ -20,13 +20,13 @@ ADD etc-ganglia-gmond.conf /etc/ganglia/gmond.conf
 #ADD etc-cvmfs-default-local /etc/cvmfs/default.local
 ADD localFrontierSquid.sh /root/localConfig/localFrontierSquid.sh
 
-ADD setup-cvmfs-portable.sh /etc/cvmfs/setup-cvmfs-portable.sh
+#ADD setup-cvmfs-portable.sh /etc/cvmfs/setup-cvmfs-portable.sh
 ADD startcondor.sh /root/startcondor.sh
 #ADD etc-cubied-condor.conf /etc/cubie.d/condor.conf
 ADD start.sh /root/start.sh
 ADD etc-fuse.conf /etc/fuse.conf
 
-RUN chmod uga+rx /etc/cvmfs/setup-cvmfs-portable.sh /root/startcondor.sh /root/start.sh
+RUN chmod uga+rx /root/startcondor.sh /root/start.sh
 RUN usermod -a -G fuse nobody
 
 ENTRYPOINT /root/start.sh

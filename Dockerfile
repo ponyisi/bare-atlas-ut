@@ -1,7 +1,7 @@
 ## University of Texas - Austin configuration
 ## Condor and local squid - no autodiscovery
 
-FROM hepsw/slc-base
+FROM cern/slc6-base
 MAINTAINER Peter Onyisi "ponyisi@cern.ch"
 
 # Frontier configuration
